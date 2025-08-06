@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeFlow</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <div class="header-left">
+                <div class="app-icon">⚡</div>
+                <div class="header-text">
+                    <h1>TypeFlow</h1>
+                </div>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </header>
+
+        <main class="popup-content">
+            <div id="status" class="status-toast"></div>
+            
+            <!-- Custom Confirmation Modal -->
+            <div id="confirmation-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modal-title">Confirm Action</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modal-message">Are you sure you want to proceed?</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="modal-cancel" class="btn-secondary">Cancel</button>
+                        <button id="modal-confirm" class="btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h3>⚡ Typing Settings</h3>
+                
+                <div class="setting-item">
+                    <label for="typing-speed">
+                        <span class="setting-label">Speed</span>
+                    </label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="typing-speed" min="20" max="300" value="120" class="compact-slider">
+                        <div class="slider-value">
+                            <span id="typing-speed-label">120</span>
+                            <span class="unit">WPM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label for="min-delay">
+                        <span class="setting-label">Min Delay</span>
+                    </label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="min-delay" min="0" max="500" value="50" class="compact-slider">
+                        <div class="slider-value">
+                            <span id="min-delay-label">50</span>
+                            <span class="unit">ms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label for="max-delay">
+                        <span class="setting-label">Max Delay</span>
+                    </label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="max-delay" min="0" max="500" value="200" class="compact-slider">
+                        <div class="slider-value">
+                            <span id="max-delay-label">200</span>
+                            <span class="unit">ms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="save" class="btn-primary">
+                        <span class="btn-icon">💾</span>
+                        Save
+                    </button>
+                    <button id="reset" class="btn-secondary">
+                        <span class="btn-icon">🔄</span>
+                        Reset
+                    </button>
+                </div>
+            </div>
+
+            <div class="snippets-section">
+                <div class="section-header">
+                    <h3>📝 Snippet Library</h3>
+                </div>
+                
+                <div class="snippet-form">
+                    <div class="compact-input">
+                        <input type="text" id="snippet-name" placeholder="Snippet name..." class="input-compact">
+                    </div>
+                    <div class="compact-input">
+                        <textarea id="new-snippet" placeholder="Content..." rows="2" class="input-compact"></textarea>
+                    </div>
+                    <button id="add-snippet" class="btn-primary full-width compact">
+                        <span class="btn-icon">➕</span>
+                        Add Snippet
+                    </button>
+                </div>
+
+                <div class="recent-snippets">
+                    <ul id="snippet-list" class="snippet-list-compact"></ul>
+                    <button id="delete-all-snippets" class="btn-secondary full-width compact" style="margin-top: 8px;">
+                        <span class="btn-icon">🗑️</span>
+                        Clear All Snippets
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

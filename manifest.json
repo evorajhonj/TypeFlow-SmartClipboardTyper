@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "TypeFlow - Smart Clipboard Typer",
+  "version": "1.0.0",
+  "description": "Intelligent clipboard typing automation with natural speed simulation and advanced snippet management.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "debugger",
+    "scripting",
+    "activeTab"
+  ],
+  "commands": {
+    "start_typing": {
+      "suggested_key": {
+        "default": "Alt+T"
+      },
+      "description": "Start typing from clipboard"
+    },
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+T"
+      },
+      "description": "Open TypeFlow settings"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TypeFlow - Smart Clipboard Typer"
+  }
+}
